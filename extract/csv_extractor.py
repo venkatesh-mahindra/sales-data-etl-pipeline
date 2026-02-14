@@ -20,7 +20,16 @@ class CSVExtractor:
     
     def setup_logging(self):
         """Setup logging configuration"""
-        logging.basicConfig(**LOGGING_CONFIG)
+        try:
+            logging.basicConfig(**LOGGING_CONFIG)
+        except Exception as e:
+            # Fallback to console logging if file logging fails
+            logging.basicConfig(
+                level=logging.INFO,
+                format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                handlers=[logging.StreamHandler(sys.stdout)]
+            )
+            print(f"Warning: Could not setup file logging, using console: {e}")
     
     def extract_csv_data(self, file_path: Optional[str] = None) -> pd.DataFrame:
         """

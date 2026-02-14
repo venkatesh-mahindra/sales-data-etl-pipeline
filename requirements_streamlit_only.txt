@@ -1,0 +1,6 @@
+# Minimal requirements for Streamlit Cloud deployment
+streamlit>=1.29.0
+pandas>=2.0.0
+numpy>=1.20.0
+plotly>=5.0.0
+requests>=2.25.0

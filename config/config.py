@@ -33,9 +33,29 @@ CSV_FILE_PATH = os.path.join(DATA_DIR, 'sales_data.csv')
 
 # Logging Configuration
 LOGGING_CONFIG = {
-    'level': 'INFO',
-    'format': '%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    'filename': os.path.join(LOGS_DIR, f'etl_pipeline_{datetime.now().strftime("%Y%m%d")}.log')
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'standard': {
+            'format': '%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+            'datefmt': '%Y-%m-%d %H:%M:%S'
+        }
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'level': 'INFO',
+            'formatter': 'standard',
+            'stream': 'ext://sys.stdout'
+        }
+    },
+    'loggers': {
+        '': {
+            'handlers': ['console'],
+            'level': 'INFO',
+            'propagate': False
+        }
+    }
 }
 
 # Data Validation Rules
