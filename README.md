@@ -474,8 +474,6 @@ This project is for educational and portfolio purposes.
 
 ## 🎯 Resume Highlights
 
-You can add this to your resume:
-
 **End-to-End Sales Data ETL Pipeline**
 - Designed and implemented comprehensive ETL pipeline integrating multi-source data (CSV & REST API)
 - Developed schema validation and data quality checks ensuring 99.8% data accuracy
@@ -485,4 +483,4 @@ You can add this to your resume:
 - Prepared ML-ready datasets for customer churn prediction and revenue forecasting
 - Achieved 95% reduction in manual data processing through automation
 
-This project showcases your ability to handle the complete data lifecycle from raw data to business insights! 🚀
+This project showcases the ability to handle complete data lifecycle from raw data to business insights! 🚀
